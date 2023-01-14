@@ -1,29 +1,34 @@
 
 
-<div>
-  <div id="image-view" (click)="finishText()">
-    <img src={{currentAction?.image}}>
-  </div>
-  <div *ngIf="isActionDecision()" id="decision">
-    <span *ngFor="let decision of $any(currentAction).decision; let i = index">
-      <button (click)="decide(i)">{{decision.text}}</button>
-    </span>
-  </div>
-  <div id="view">
-    <div id="text-box" (click)="nextStep()">
-      <div id="typewriter">
-        {{showText}}
+<div id="content">
+  <div>
+    <div id="image-view" (click)="nextStep()">
+      <img src={{currentAction?.image}}>
+    </div>
+    <div id="decision-wrapper">
+      <div *ngIf="isActionDecision()" id="decision">
+        <span *ngFor="let decision of $any(currentAction).decision; let i = index">
+          <button class="decision-button" (click)="decide(i)">{{decision.text}}</button>
+        </span>
+      </div>
+    </div>
+    <div id="view">
+      <div id="text-box" (click)="nextStep()">
+        <div id="typewriter">
+          {{showText}}
+        </div>
+      </div>
+    </div>
+    <div id="life-bar">
+      <div id="bar">
+        {{barValue}}
       </div>
     </div>
   </div>
-  <div id="life-bar">
-    <div id="bar">
-      {{barValue}}
-    </div>
+  <div *ngIf="showPopup" id="popup-wrapper">
   </div>
-</div>
-<div *ngIf="showPopup" id="popup-wrapper">
-</div>
-<div *ngIf="showPopup" id="popup">
-  adssdasad
+  <div *ngIf="showPopup" id="popup">
+    adssdasad
+  </div>
+  
 </div>

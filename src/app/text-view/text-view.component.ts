@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TextService } from '../service/text.service';
-import { Action, ActionDecision, ActionText, isActionDecision, isActionText, path_fashion } from '../model/text';
+import { Action, ActionDecision, ActionText, ActionTypes, isActionDecision, isActionText, path_fashion } from '../model/text';
 
 @Component({
   selector: 'app-text-view',
@@ -12,7 +12,7 @@ export class TextViewComponent implements OnInit {
   currentStep: number = 0;
   textStep: number = 0;
   source;
-  currentAction?: ActionText | ActionDecision = path_fashion.get(0);
+  currentAction?: ActionTypes = path_fashion.get(0);
   barValue: number = 100;
   showPopup: boolean = false;
   
