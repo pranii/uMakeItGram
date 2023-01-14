@@ -2,7 +2,8 @@
   padding: 3rem;
 
   #text-box {
-    border: 2px solid #000000;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border:solid 7px #41403E;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -11,6 +12,7 @@
     font-family: Consolas, monaco, monospace;
     min-height: 70px;
     font-size: 25px;
+    color: #41403E;
   }
 }
 
@@ -25,14 +27,18 @@
 
 #life-bar {
   display: flex;
+  margin-left: 3rem;
+  margin-right: 3rem;
   justify-content: center;
+  height: 50px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border:solid 8px #41403E;
   
   #bar {
     display: flex;
     justify-content: center;
-    width: 5%;
     color: white;
-    background-color: #000000;
+    background-color: #41403E;
 
   }
 }
@@ -47,12 +53,18 @@
 }
 #popup {
   position: absolute;
-  background: red;
+  font-family: Consolas, monaco, monospace;
+  font-size: 25px;
   opacity: 1;
-  width: 80%;
-  height: 80%;
-  top: 5%;
-  left: 10%;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  background: white;
+  display: flex;
+  left: 25%;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 #decision-wrapper {

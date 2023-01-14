@@ -1,5 +1,7 @@
 
-
+<span> {{currentStep}}</span>
+<span> {{$any(currentAction).nextStep}}</span>
+<span *ngFor="let decision of $any(currentAction).decision">{{decision.nextStep}}/</span>
 <div id="content">
   <div>
     <div id="image-view" (click)="nextStep()">
@@ -20,15 +22,15 @@
       </div>
     </div>
     <div id="life-bar">
-      <div id="bar">
-        {{barValue}}
-      </div>
+      <span #life [ngStyle]="barStyle" id="bar">
+        
+      </span>
     </div>
   </div>
   <div *ngIf="showPopup" id="popup-wrapper">
   </div>
-  <div *ngIf="showPopup" id="popup">
-    adssdasad
+  <div *ngIf="showPopup" id="popup" (click)="showPopup=false">
+    {{currentAction!.text}}
   </div>
   
 </div>

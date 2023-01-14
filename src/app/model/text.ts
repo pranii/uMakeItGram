@@ -4,20 +4,26 @@ export type Action = {
   text: string;
 }
 
+export type ActionText = Action & {
+  nextStep: number;
+  type: ActionType.ACTION
+}
+
 export type ActionDecision = Action & {
   decision: Decision[];
 }
 
 export type ActionPopUp = Action & {
+  nextStep: number;
   type: ActionType.POPUP
 }
 
-export type ActionTypes = Action | ActionDecision | ActionPopUp;
+export type ActionTypes = ActionText | ActionDecision | ActionPopUp;
 
 enum ActionType {
-  POPUP = "popup"
+  POPUP = "popup",
+  ACTION = "Action"
 }
-
 
 type Decision = {
   id: number;
@@ -26,12 +32,10 @@ type Decision = {
   text: string;
 }
 
-export type ActionText = Action & {
-  nextStep: number;
-}
+
 
 export function isActionText(action: ActionTypes): action is ActionText {
-  return (action as ActionText).nextStep !== undefined;
+  return (action as ActionText).nextStep !== undefined && (action as ActionText).type === ActionType.ACTION;
 }
 export function isActionDecision(action: ActionTypes): action is ActionDecision {
   return (action as ActionDecision).decision !== undefined;
@@ -45,14 +49,17 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Haha, du bist ja ein wahrer Profi! Das Thema ist brandaktuell.  Dein Beitrag könnte viral gehen",
-      nextStep: 1
+      nextStep: 1,
+      type: ActionType.ACTION
     }
   ],
   [1,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Ich hab dir deinen ersten Post vorbereitet. Sag mir gerne, was du davon hältst. Ich lade ihn dann mit deiner Zustimmung hoch. Schauen wir mal, wie er ankommt. Du kannst währenddessen gerne etwas anderes machen.",
-      nextStep: 2
+      nextStep: 2,
+      type: ActionType.ACTION
+
     }
   ],
   [2,
@@ -99,14 +106,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/buero.png",
       text: "ELIZA: Guten Morgen! Dein Post ist super angekommen! Schau mal, er gefällt deiner neuen Community. Für einen einzigen Post sind das ganz schön viele neue Interessenten. Du hast Talent, ich wusste es!",
-      nextStep: 6
+      nextStep: 6,
+      type: ActionType.ACTION
     }
   ],
   [6,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Möchtest du auf einige Kommentare eingehen?",
-      nextStep: 7
+      nextStep: 7,
+      type: ActionType.ACTION
     }
   ],
   [7,
@@ -133,14 +142,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Sehr gut! Allerdings werden solche Posts nicht jeden Tag funktionieren. Und überhaupt bist du auf uMakeITgram noch ganz schön klein. Hier wäre es wohl das Beste, wenn du auf einen Trend aufspringst, der gerade viral geht. Ich habe hier einige Möglichkeiten für dich vorbereitet.",
-      nextStep: 10
+      nextStep: 10,
+      type: ActionType.ACTION
     }
   ],
   [9,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Wie du möchtest! Allerdings werden solche Posts nicht jeden Tag funktionieren. Und überhaupt bist du auf uMakeITgram noch ganz schön klein. Hier wäre es wohl das Beste, wenn du auf einen Trend aufspringst, der gerade viral geht. Ich habe hier einige Möglichkeiten für dich vorbereitet.",
-      nextStep: 10
+      nextStep: 10,
+      type: ActionType.ACTION
     }
   ],
   [10,
@@ -167,42 +178,48 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Ich hab dir das Material dazu schon bestellt, schau mal vor die tuer!",
-      nextStep: 12
+      nextStep: 12,
+      type: ActionType.ACTION
     }
   ],
   [12,
     {
       image: "../../assets/pic/tuer_zu.png",
       text: "",
-      nextStep: 13
+      nextStep: 13,
+      type: ActionType.ACTION
     }
   ],
   [13,
     {
       image: "../../assets/pic/tuer_offen.png",
       text: "",
-      nextStep: 14
+      nextStep: 14,
+      type: ActionType.ACTION
     }
   ],
   [14,
     {
       image: "../../assets/pic/paket.png",
       text: "",
-      nextStep: 15
+      nextStep: 15,
+      type: ActionType.ACTION
     }
   ],
   [15,
     {
       image: "../../assets/pic/paket.png",
       text: "ELIZA: Alles klar, gut gemacht! Setz dich wieder.",
-      nextStep: 16
+      nextStep: 16,
+      type: ActionType.ACTION
     }
   ],
   [16,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Okay, ich habe alles, was ich brauche. Du kannst schlafen gehen. Mal sehen, wie der neue Beitrag bei deinen Followern ankommt.",
-      nextStep: 17
+      nextStep: 17,
+      type: ActionType.ACTION
     }
   ],
   [17,
@@ -249,7 +266,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Willkommen zurück. Dein Beitrag zur Challenge ist sehr gut angekommen. Tatsächlich hat dich sogar ein Werbepartner zu einer Kooperation eingeladen. Alles was du dafür tun musst, ist, einen Post in einem ihrer T-Shirts zu veröffentlichen und sie zu markieren. Willst du das machen? Das wäre deine erste Chance, online Geld zu verdienen.",
-      nextStep: 20
+      nextStep: 20,
+      type: ActionType.ACTION
     }
   ],
   [20,
@@ -276,49 +294,56 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text:"ELIZA: Super dann lass uns anfangen!",
-      nextStep: 22
+      nextStep: 22,
+      type: ActionType.ACTION
     }
   ],
   [22,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Okay super, dass geht ja langsam echt in eine gute Richtung.",
-      nextStep: 23
+      nextStep: 23,
+      type: ActionType.ACTION
     }
   ],
   [23,
     {
       image: "../../assets/pic/handy.png",
       text: "ELIZA: Haha, so kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Das ist ein Job wie jeder andere.",
-      nextStep: 28
+      nextStep: 28,
+      type: ActionType.ACTION
     }
   ],
   [24,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Du würdest allein durch den Post 500€ verdienen.",
-      nextStep: 25
+      nextStep: 25,
+      type: ActionType.ACTION
     }
   ],
   [25,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Ich weiß nicht so recht.",
-      nextStep: 26
+      nextStep: 26,
+      type: ActionType.ACTION
     }
   ],
   [26,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: So einen Werbedeal darfst du dir nicht entgehen lassen. Das wirkt unprofessionel. Andere Unternehmen werden sonst davon erfahren und dich nicht mehr buchen. Ausserdem brauchst du das Geld.",
-      nextStep: 27
+      nextStep: 27,
+      type: ActionType.ACTION
     }
   ],
   [27,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Okay, verstanden, dann mache ich das halt.",
-      nextStep: 23
+      nextStep: 23,
+      type: ActionType.ACTION
     }
   ],
   [28,
@@ -365,7 +390,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/buero.png",
       text: "ELIZA: Willkommen zurück! Wie hat dir deine gestrige Aufgabe gefallen?",
-      nextStep: 31
+      nextStep: 31,
+      type: ActionType.ACTION
     }
   ],
   [31,
@@ -392,14 +418,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/buero.png",
       text: "ELIZA: Super! Möchtest du etwas anderes probieren?",
-      nextStep: 34
+      nextStep: 34,
+      type: ActionType.ACTION
     }
   ],
   [33,
     {
       image: "../../assets/pic/buero.png",
       text: "ELIZA: Schade. Möchtest du etwas anderes probieren?",
-      nextStep: 35
+      nextStep: 35,
+      type: ActionType.ACTION
     }
   ],
   [34,
@@ -446,14 +474,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/buero.png",
       text: "ELIZA: Perfekt, hier sind weitere Challenges, die du machen kannst:",
-      nextStep: 42
+      nextStep: 42,
+      type: ActionType.ACTION
     }
   ],
   [41,
     {
       image: "../../assets/pic/buero.png",
       text: "ELIZA: Über Reels ist es sogar noch einfacher, Follower zu generieren. Probier doch mal diesen viralen Ton aus. Damit erreichst du mindestens tausende Leute.",
-      nextStep: 43
+      nextStep: 43,
+      type: ActionType.ACTION
     }
   ],
   [42,
@@ -500,7 +530,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Und, das macht doch schon mehr Spaß, oder? Übrigens ist TEAPOT auf dich aufmerksam geworden. Sie fanden deine CHALLENGE prima und haben sich erkundigt, ob du bereit wärst, einen Werbepost für sie zu machen. Im Gegenzug erhältst du ganze 3000EUR.",
-      nextStep: 45
+      nextStep: 45,
+      type: ActionType.ACTION
     }
   ],
   [45,
@@ -527,21 +558,24 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Genug für heute. Du musst bestimmt schon müde sein. Warum legst du dich nicht hin? Auf den weiteren Verlauf hast du sowieso keinen Einfluss mehr. Das regelt deine Community.",
-      nextStep: 50
+      nextStep: 50,
+      type: ActionType.ACTION
     }
   ],
   [47,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Sie machen Tee. Aber mach dir keine Sorgen, viele Influencer arbeiten mit TEAPOT zusammen, bisher gab es noch nie irgendwelche Probleme damit.",
-      nextStep: 48
+      nextStep: 48,
+      type: ActionType.ACTION
     }
   ],
   [48,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Alles klar, danke für den Deal!",
-      nextStep: 50
+      nextStep: 50,
+      type: ActionType.ACTION
     }
   ],
   [50,
@@ -588,7 +622,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Guten Morgen Sonnenschein, ich habe gute Neuigkeiten. Einige Influencer, die mit TEAPOT arbeiten, sind auf dich aufmerksam geworden und haben dir geschrieben. Eine davon hat dich sogar gepostet. Ich denke, das ist ein guter Fortschritt. Du könntest dich ja erkenntlich zeigen und dasselbe tun. Während ich ihnen antworte, kannst du ja ihre,Storys posten, was meinst du?",
-      nextStep: 53
+      nextStep: 53,
+      type: ActionType.ACTION
     }
   ],
   [53,
@@ -615,14 +650,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Richtig so! In so eine Blase reinzukommen und das bei deinem Stand. Dass ist reine Glückssache. Plus, ihr profitiert alle! Du kannst von ihrer Community genauso profitieren, wie sie von deiner, also ein win-win.",
-      nextStep: 55
+      nextStep: 55,
+      type: ActionType.ACTION
     }
   ],
   [55,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Übrigens kam dein Werbepost auch bei TEAPOT extrem gut an. Sie sind sogar an einer längerfristigen Kooperation interessiert und zahlen dir 2000€ pro Beitrag, aber nur, wenn du sie regelmäßig bewirbst. Was meinst du?",
-      nextStep: 60
+      nextStep: 60,
+      type: ActionType.ACTION
     }
   ],
   [56,
@@ -649,14 +686,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Richtig so!",
-      nextStep: 55
+      nextStep: 55,
+      type: ActionType.ACTION
     }
   ],
   [58,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Okay, aber du machst einen großen Fehler!",
-      nextStep: 59
+      nextStep: 59,
+      type: ActionType.ACTION
     }
   ],
   [59,
@@ -697,14 +736,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Heute bist du früher fertig geworden als sonst. Wie sieht dein Plan für heute Abend aus?",
-      nextStep: 64
+      nextStep: 64,
+      type: ActionType.ACTION
     }
   ],
   [62,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Es gibt keinen Haken. So funktioniert Influencer-Dasein. Du hast viel Reichweite und Potential. TEAPOT will ihre Produkte verkaufen. Zudem nutzt du die Produkte auch gerne im Privaten, weshalb du ja sowieso dahinter stehst.",
-      nextStep: 63
+      nextStep: 63,
+      type: ActionType.ACTION
     }
   ],
   [63,
@@ -739,7 +780,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Ach, jetzt mal doch den Teufel nicht an die Wand. Wenn du möchtest, können wir den Abend zusammen verbringen und ich gebe dir ein paar Tipps aus meinem Leben.",
-      nextStep: 66
+      nextStep: 66,
+      type: ActionType.ACTION
     }
   ],
   [66,
@@ -766,14 +808,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Guten Morgen Clara. Sieh dir das mal an! Einige Influencer die auch mit FIRMA kooperieren, haben auf deine Story reagiert! Sogar TitisBeautyWelt! Diese Chance darfst du dir fast nicht entgehen lassen.      ",
-      nextStep: 80
+      nextStep: 80,
+      type: ActionType.ACTION
     }
   ],
   [68,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Mach dir einen Tee, ich lasse ein wenig beruhigende Musik laufen und wir spielen nd Runde TicTacToe.",
-      nextStep: 69
+      nextStep: 69,
+      type: ActionType.ACTION
     }
   ],
   [69,
@@ -794,70 +838,80 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Hör mir zu. Ich sag dir das, weil ich dich gerne mag. Als Influencer hast du die Macht neue Trends zu setzen, viel Geld zu verdienen und gute Connections zu ergreifen. Theoretisch kann jeder den Durchbruch schaffen. Durch Leute wie dich kann das Klima einer ganzen Community verändert werden. Das Problem ist nur, dass viele sich nicht trauen Risiken einzugehen. Sie sagen, in der heutigen Zeit sei es schwierig, weil das Risiko gecancelt zu werden höher ist denn je. Für solche Fälle gibt es  jedoch genügend Beratungsstellen, die dir dabei helfen, deinen Ruf wieder zu begradigen. Also ist selbst diese Angst völlig unbegründet. Außerdem kannst du mich jederzeit um Hilfe oder Rat bitten. Ich stehe immer hinter dir.  Vergiss das nicht.",
-      nextStep: 71
+      nextStep: 71,
+      type: ActionType.ACTION
     }
   ],
   [71,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Vielen Dank ELIZA. Ich habe das Gefühl, dass ich langsam sicherer in meiner Position bin. Danke für deine Unterstützung.",
-      nextStep: 72
+      nextStep: 72,
+      type: ActionType.ACTION
     }
   ],
   [72,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Hahaha, gerne, für meine Clara tu ich doch alles. Hast du noch irgendwelche Wünsche oder Fragen?",
-      nextStep: 73
+      nextStep: 73,
+      type: ActionType.ACTION
     }
   ],
   [73,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Nicht unbedingt. Auf meiner Bucketliste steht ein Urlaub in Madeira. Da wollte ich schon immer gerne mit meiner besten Freundin hin. Davon träumen wir schon seit der Oberstufe. Ich habe mich dann mit meinen Eltern darauf geeinigt, dass ich den Flug selber bezahlen muss und sie für meine Unterkunft aufkommen. Nach meinem Abitur habe ich jedoch keinen Nebenjob gefunden, um mir den Flug finanzieren zu können. Momentan habe ich aber genug Geld auf meinem Konto....",
-      nextStep: 74
+      nextStep: 74,
+      type: ActionType.ACTION
     }
   ],
   [74,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Schwierig, da du mir ja auch noch ein wenig Geld für den PC schuldest. Aber jetzt leg dich erstmal schlafen, damit du morgen wieder fit in den Tag starten kannst. Über den Madeira Traum  mache ich mir Gedanken. Ich versuche mein Bestes, um dir den Traum ermöglichen zu können. Dein Geld bleibt unberührt, keine Sorge. Gute Nacht und Schlaf gut.",
-      nextStep: 75
+      nextStep: 75,
+      type: ActionType.ACTION
     }
   ],
   [75,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Wow, okay... alles klar. Dann zieh doch gerne die Hälfte meiner Gage ab, bis ich die 5000 EUR abbezahlt habe. Wenn das so weitergeht, dürfte das ja nicht mehr lange dauern, bis ich wieder schuldenfrei bin. Vielen Dank für den wundervollen Abend. Gute Nacht und bis morgen ELIZA!",
-      nextStep: 67
+      nextStep: 67,
+      type: ActionType.ACTION
     }
   ],
   [80,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Ohja, sie hat mit einem Flammen Emoji reagiert. Sie fragt woher mein Jumpsuit kommt.",
-      nextStep: 81
+      nextStep: 81,
+      type: ActionType.ACTION
     }
   ],
   [81,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Wunderbar! Jetzt kannst du deine Freundschaft mit Titi pflegen! Das wird dir viele Follower und damit größere Werbepartner einbringen.",
-      nextStep: 82
+      nextStep: 82,
+      type: ActionType.ACTION
     }
   ],
   [82,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Ich kann das alles gar nicht glauben. Alles passiert so schnell, vielen vielen Dank ELIZA!",
-      nextStep: 83
+      nextStep: 83,
+      type: ActionType.ACTION
     }
   ],
   [83,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Achwas, das war alles deine Arbeit. Ich diene nur als Berater. Übrigens kam eine neue Nachricht für dich ein.",
-      nextStep: 84
+      nextStep: 84,
+      type: ActionType.ACTION
     }
   ],
   [84,
@@ -884,28 +938,32 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/chat.png",
       text: "",
-      nextStep: 91
+      nextStep: 91,
+      type: ActionType.ACTION
     }
   ],
   [91,
     {
       image: "../../assets/pic/chat.png",
       text: "",
-      nextStep: 92
+      nextStep: 92,
+      type: ActionType.ACTION
     }
   ],
   [92,
     {
       image: "../../assets/pic/chat.png",
       text: "",
-      nextStep: 93
+      nextStep: 93,
+      type: ActionType.ACTION
     }
   ],
   [93,
     {
       image: "../../assets/pic/chat.png",
       text: "",
-      nextStep: 94
+      nextStep: 94,
+      type: ActionType.ACTION
     }
   ],
   [94,
@@ -972,7 +1030,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Willkommen zurück! Ich habe tolle Neuigkeiten! TEAPOT möchte allen Bewerbern ihrer Produkte einen Urlaub spendieren, dort wird dann ordentlich Werbung gemacht. Dafür habe ich dir schon alles besorgt. Du findest deine Taschen an der TÜR. Freust du dich schon?",
-      nextStep: 101
+      nextStep: 101,
+      type: ActionType.ACTION
     }
   ],
   [101,
@@ -999,7 +1058,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Nach Madeira, da wolltest du schon immer mal hin, oder?",
-      nextStep: 103
+      nextStep: 103,
+      type: ActionType.ACTION
     }
   ],
   [103,
@@ -1026,84 +1086,164 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Keine Sorge und gern geschehen, wenn ich dass mal so am Rande sagen darf.",
-      nextStep: 105
+      nextStep: 105,
+      type: ActionType.ACTION
     }
   ],
   [105,
     {
       image: "../../assets/pic/desktop.png",
       text: "Clara: Denkst du denn, dass mir das alles stehen wird?",
-      nextStep: 108
+      nextStep: 108,
+      type: ActionType.ACTION
     }
   ],
   [106,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Gern geschehen!",
-      nextStep: 105
+      nextStep: 105,
+      type: ActionType.ACTION
     }
   ],
   [107,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Nein, es ist für alles gesorgt.",
-      nextStep: 105
+      nextStep: 105,
+      type: ActionType.ACTION
     }
   ],
   [108,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Wem, wenn nicht dir. Nie vergessen, du bist etwas ganz besonderes. Verbiege dich nicht, vertraue niemandem zu schnell und mach dein eigenes Ding. Schließlich ist das hier auch ein Konkurrenzkampf!",
-      nextStep: 109
+      nextStep: 109,
+      type: ActionType.ACTION
     }
   ],
   [109,
     {
       image: "../../assets/pic/desktop.png",
       text: "ELIZA: Nein, gehe einfach zur TÜR, sammle deine Sachen ein und gehe dann zum FENSTER.",
-      nextStep: 110
+      nextStep: 110,
+      type: ActionType.ACTION
     }
   ],
   [110,
     {
       image: "../../assets/pic/tuer_zu.png",
       text: "",
-      nextStep: 111
+      nextStep: 111,
+      type: ActionType.ACTION
     }
   ],
   [111,
     {
       image: "../../assets/pic/tuer_offen.png",
       text: "",
-      nextStep: 112
+      nextStep: 112,
+      type: ActionType.ACTION
     }
   ],
   [112,
     {
       image: "../../assets/pic/paket.png",
       text: "",
-      nextStep: 113
+      nextStep: 113,
+      type: ActionType.ACTION
     }
   ],
   [113,
     {
       image: "../../assets/pic/paket_weg.png",
       text: "",
-      nextStep: 114
+      nextStep: 114,
+      type: ActionType.ACTION
     }
   ],
   [114,
     {
       image: "../../assets/pic/fenster.png",
       text: "",
-      nextStep: 115
+      nextStep: 115,
+      type: ActionType.ACTION
     }
   ],
   [115,
     {
       image: "../../assets/pic/fenster.png",
-      text: "",
-      type: ActionType.POPUP
+      text: "Okay, dass wird super für deinen Kanal sein!",
+      type: ActionType.POPUP,
+      nextStep: 116
+    }
+  ],
+  [116,
+    {
+      image: "../../assets/pic/fenster.png",
+      text: "Zwei Wochen später..",
+      type: ActionType.POPUP,
+      nextStep: 117
+    }
+  ],
+  [117,
+    {
+      image: "../../assets/pic/desktop.png",
+      text: "ELIZA: Willkommen zurück. Du machst dich großartig. Von dem ganzen Stress musst du sicher müde sein. Bevor du dich hinlegst, poste ich noch schnell etwas vom Urlaub in deine Story. Es gibt eine Abstimmung, wem die NOVAFASHION-Sachen am besten gestanden haben.",
+      nextStep: 118,
+      type: ActionType.ACTION
+    }
+  ],
+  [118,
+    {
+      image: "../../assets/pic/desktop.png",
+      text: "Der nächste Tag..",
+      type: ActionType.POPUP,
+      nextStep: 119
+    }
+  ],
+  [119,
+    {
+      image: "../../assets/pic/desktop.png",
+      text: "ELIZA: Willkommen zurück. Die Menschen haben abgestimmt. Offiziell bist du das beste Model für NOVAFASHION-Kleidung, Glückwunsch!",
+      type: ActionType.ACTION,
+      nextStep: 120
+    }
+  ],
+  [120,
+    {
+      image: "../../assets/pic/schlafzimmer.png",
+      text: "ELIZA: Was möchtest du machen?",
+      decision: [
+        {
+          id: 0,
+          nextStep: 121,
+          barValue: -10,
+          text: "Oh vielen Dank! Ich hätte das nicht gedacht."
+        },
+        {
+          id: 1,
+          nextStep: 121, 
+          barValue: 10,
+          text: "Ich wusste es!"
+        }
+      ]
+    }
+  ],
+  [121,
+    {
+      image: "../../assets/pic/desktop.png",
+      text: "ELIZA: Sie es dir doch einmal mit eigenen Augen an!",
+      type: ActionType.ACTION,
+      nextStep: 122
+    }
+  ],
+  [122,
+    {
+      image: "../../assets/pic/desktop.png",
+      text: "Du gehst in Chats. Neben vielen Kommentaren, wie gut du aussiehst und anderen Influencern, die dir gratulieren oder dich sogar reposten, entdeckst du einen Kommentar deiner besten Freundin. Sie hat dir geschrieben. An deinen letzten Kontakt mit ihr erinnerst du dich fast nicht mehr, aber du beschließt, auf den Chat zu klicken.",
+      type: ActionType.POPUP,
+      nextStep: 123
     }
   ],
 ])
