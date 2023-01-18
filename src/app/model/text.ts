@@ -1686,12 +1686,14 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
         {
           id: 0,
           nextStep: 166,
-          text: "Es war eine lange Reise."
+          text: "Es war eine lange Reise.",
+          barValue: 0,
         },
         {
           id: 1,
           nextStep: 166,
-          text: "Nur mein Jetlag, keine Sorge."
+          text: "Nur mein Jetlag, keine Sorge.",
+          barValue: 0,
         }
       ]
     }
@@ -1740,12 +1742,14 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
         {
           id: 0,
           nextStep: 170,
-          text: "reagieren."
+          text: "reagieren.",
+          barValue: 0
         },
         {
           id: 1,
           nextStep: 171,
-          text: "ignorieren."
+          text: "ignorieren.",
+          barValue: 0
         }
       ]
     }
