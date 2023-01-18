@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActionTypes, isActionDecision, isActionPopup, isActionText, path_fashion } from '../model/text';
-import { TextService } from '../service/text.service';
+import { ActionTypes, isActionDecision, isActionPopup, isActionText, lifeMaxBarValue, lifeStartValue, path_fashion } from '../model/text';
 
 @Component({
   selector: 'app-text-view',
@@ -13,16 +12,15 @@ export class TextViewComponent implements OnInit {
   textStep: number = 0;
   source;
   currentAction?: ActionTypes = path_fashion.get(0);
-  barValue: number = 20;
-  maxBarValue: number = 200;
+  barValue: number = lifeStartValue;
+  maxBarValue: number = lifeMaxBarValue;
   showPopup: boolean = false;
-  @ViewChild('life') myDiv: ElementRef | undefined;
   barStyle = {
     width: this.maxBarValue/this.barValue + '%'
   }
 
   
-  constructor(private textService: TextService) {
+  constructor() {
     this.source = setInterval(() => {this.showText =  this.currentAction!.text.slice(0,this.textStep); this.textStep++}, 5);
   }
 

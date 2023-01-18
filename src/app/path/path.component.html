@@ -1,0 +1,31 @@
+
+<div id="content">
+  <div>
+    <div id="image-view">
+      <div  (click)="nextStep()">
+        <img src="../../assets/pic/fashion.jpg">
+      </div>
+      <div (click)="nextStep()">
+        <img src="../../assets/pic/sport.jpg">
+      </div>
+      <div (click)="nextStep()">
+        <img src="../../assets/pic/music.jpg">
+      </div>
+    </div>
+    <div id="decision-wrapper">
+    </div>
+    <div id="view">
+      <div id="text-box">
+        <div id="typewriter">
+          {{showText}}
+        </div>
+      </div>
+    </div>
+    <div id="life-bar">
+      <span #life [ngStyle]="barStyle" id="bar">
+        
+      </span>
+    </div>
+  </div>
+  
+</div>
