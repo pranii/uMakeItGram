@@ -34,6 +34,7 @@ type Decision = {
 
 export const lifeStartValue = 20;
 export const lifeMaxBarValue = 200;
+export const textSpeed = 50;
 
 
 export function isActionText(action: ActionTypes): action is ActionText {

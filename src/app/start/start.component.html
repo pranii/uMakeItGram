@@ -1,3 +1,6 @@
-<div id="start-text" (click)="forwardToPath()">
+<div *ngIf="!showButton" id="start-text" (click)="showButton=true">
   {{showText}}
+</div>
+<div *ngIf="showButton" id="start-button" (click)="forwardToPath()">
+  <img src="../../assets/pic/start.jpg">
 </div>

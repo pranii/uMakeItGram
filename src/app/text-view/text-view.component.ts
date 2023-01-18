@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActionTypes, isActionDecision, isActionPopup, isActionText, lifeMaxBarValue, lifeStartValue, path_fashion } from '../model/text';
+import { ActionTypes, isActionDecision, isActionPopup, isActionText, lifeMaxBarValue, lifeStartValue, path_fashion, textSpeed } from '../model/text';
 
 @Component({
   selector: 'app-text-view',
@@ -21,7 +21,7 @@ export class TextViewComponent implements OnInit {
 
   
   constructor() {
-    this.source = setInterval(() => {this.showText =  this.currentAction!.text.slice(0,this.textStep); this.textStep++}, 5);
+    this.source = setInterval(() => {this.showText =  this.currentAction!.text.slice(0,this.textStep); this.textStep++}, textSpeed);
   }
 
   ngOnInit(): void {
