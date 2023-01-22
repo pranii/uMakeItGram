@@ -34,7 +34,7 @@ type Decision = {
 
 export const lifeStartValue = 20;
 export const lifeMaxBarValue = 200;
-export const textSpeed = 50;
+export const textSpeed = 10;
 
 
 export function isActionText(action: ActionTypes): action is ActionText {
@@ -50,7 +50,7 @@ export function isActionPopup(action: ActionTypes): action is ActionPopUp {
 export const path_fashion: Map<number, ActionTypes> = new Map([
   [0,   
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rdesktop.png",
       text: "ELIZA: Haha, du bist ja ein wahrer Profi! Das Thema ist brandaktuell.  Dein Beitrag könnte viral gehen",
       nextStep:1,
       type: ActionType.ACTION
@@ -58,7 +58,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [1,
     {
-      image: "./../assets/pic/final/branded shirt.png",
+      image: "./../assets/pic/fi/branded.png",
       text: "ELIZA: Ich hab dir deinen ersten Post vorbereitet. Sag mir gerne, was du davon hältst. Ich lade ihn dann mit deiner Zustimmung hoch. Schauen wir mal, wie er ankommt. Du kannst währendessen gerne etwas anderes machen.",
       nextStep: 2,
       type: ActionType.ACTION
@@ -68,7 +68,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   [2,
     {
       image: "./../assets/pic/final/Bedroom.png",
-      text: "ELIZA: Ich hab dir deinen ersten Post vorbereitet. Sag mir gerne, was du davon hältst. Ich lade ihn dann mit deiner Zustimmung hoch. Schauen wir mal, wie er ankommt. Du kannst währenddessen gerne etwas anderes machen.",
+      text: "",
       decision: [
         {
           id: 0,
@@ -116,7 +116,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
  
   [7,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/randoo.png",
       text: "ELIZA: Möchtest du auf einige Kommentare eingehen?",
       decision: [
         {
@@ -136,7 +136,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [8,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/randoo.png",
       text: "ELIZA: Sehr gut! Allerdings werden solche Posts nicht jeden Tag funktionieren. Und überhaupt bist du auf uMakeITgram noch ganz schön klein. Hier wäre es wohl das Beste, wenn du auf einen Trend aufspringst, der gerade viral geht. Ich habe hier einige Möglichkeiten für dich vorbereitet.",
       nextStep: 10,
       type: ActionType.ACTION
@@ -144,7 +144,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [9,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/randoo.png",
       text: "ELIZA: Wie du möchtest! Allerdings werden solche Posts nicht jeden Tag funktionieren. Und überhaupt bist du auf uMakeITgram noch ganz schön klein. Hier wäre es wohl das Beste, wenn du auf einen Trend aufspringst, der gerade viral geht. Ich habe hier einige Möglichkeiten für dich vorbereitet.",
       nextStep: 10,
       type: ActionType.ACTION
@@ -152,7 +152,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [10,
     {
-      image: "../../assets/pic/final/Icebucket.png",
+      image: "../../assets/pic/fi/chilliflock.png",
       text: "ELIZA: Was möchtest du tun?",
       decision: [
         {
@@ -260,7 +260,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [19,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rr.png",
       text: "ELIZA: Willkommen zurück. Dein Beitrag zur Challenge ist sehr gut angekommen. Tatsächlich hat dich sogar ein Werbepartner zu einer Kooperation eingeladen. Alles was du dafür tun musst, ist, einen Post in einem ihrer T-Shirts zu veröffentlichen und sie zu markieren. Willst du das machen? Das wäre deine erste Chance, online Geld zu verdienen.",
       nextStep: 20,
       type: ActionType.ACTION
@@ -268,8 +268,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [20,
     {
-      image: "../../assets/pic/final/Bedroom.png",
-      text: "ELIZA: Okay, ich habe alles, was ich brauche. Du kannst schlafen gehen. Mal sehen, wie der neue Beitrag bei deinen Followern ankommt.",
+      image: "../../assets/pic/fi/Rr.png",
+      text: "ELIZA: Tatsächlich hat dich sogar ein Werbepartner zu einer Kooperation eingeladen. Alles was du dafür tun musst, ist, einen Post in einem ihrer T-Shirts zu veröffentlichen und sie zu markieren. Willst du das machen? Das wäre deine erste Chance, online Geld zu verdienen.",
       decision: [
         {
           id: 0,
@@ -288,7 +288,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [21,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rr.png",
       text:"ELIZA: Dann lass uns beginnen!",
       nextStep: 22,
       type: ActionType.ACTION
@@ -296,7 +296,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [22,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "Clara: Okay super, dass geht ja langsam echt in eine gute Richtung.",
       nextStep: 23,
       type: ActionType.ACTION
@@ -304,7 +304,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [23,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/RUVertrag.png",
       text: "ELIZA: Haha, so kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Das ist ein Job wie jeder andere.",
       nextStep: 28,
       type: ActionType.ACTION
@@ -312,7 +312,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [24,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Du würdest allein durch den Post 500€ verdienen.",
       nextStep: 25,
       type: ActionType.ACTION
@@ -320,7 +320,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [25,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "Clara: Ich weiß nicht so recht.",
       nextStep: 26,
       type: ActionType.ACTION
@@ -328,7 +328,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [26,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: So einen Werbedeal darfst du dir nicht entgehen lassen. Das wirkt unprofessionel. Andere Unternehmen werden sonst davon erfahren und dich nicht mehr buchen. Ausserdem brauchst du das Geld.",
       nextStep: 27,
       type: ActionType.ACTION
@@ -336,7 +336,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [27,
     {
-      image: "../../assets/pic/final/branded shirt.png",
+      image: "../../assets/pic/fi/RUVertrag.png",
       text: "Clara: Okay, verstanden, dann mache ich das halt.",
       nextStep: 23,
       type: ActionType.ACTION
@@ -468,7 +468,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [40,
     {
-      image: "../../assets/pic/final/LivingRoom.png",
+      image: "../../assets/pic/fi/Rdsktpt.png",
       text: "ELIZA: Perfekt, hier sind weitere Challenges, die du machen kannst:",
       nextStep: 42,
       type: ActionType.ACTION
@@ -476,7 +476,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [41,
     {
-      image: "../../assets/pic/final/LivingRoom.png",
+      image: "../../assets/pic/fi/Rdsktpt.png",
       text: "ELIZA: Über Reels ist es sogar noch einfacher, Follower zu generieren. Probier doch mal diesen viralen Ton aus. Damit erreichst du mindestens tausende Leute.",
       nextStep: 43,
       type: ActionType.ACTION
@@ -484,7 +484,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [42,
     {
-      image: "../../assets/pic/final/LivingRoom.png",
+      image: "../../assets/pic/fi/reels.png",
       text: "ELIZA: Perfekt, hier sind weitere Challenges, die du machen kannst:",
       decision: [
         {
@@ -504,7 +504,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [43,
     {
-      image: "../../assets/pic/final/LivingRoom.png",
+      image: "../../assets/pic/fi/reels.png",
       text: "ELIZA: Über Reels ist es sogar noch einfacher, Follower zu generieren. Probier doch mal diesen viralen Ton aus. Damit erreichst du mindestens tausende Leute.",
       decision: [
         {
@@ -532,7 +532,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [45,
     {
-      image: "../../assets/pic/final/HomeScreen.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Und, das macht doch schon mehr Spaß, oder? Übrigens ist TEAPOT auf dich aufmerksam geworden. Sie fanden deine CHALLENGE prima und haben sich erkundigt, ob du bereit wärst, einen Werbepost für sie zu machen. Im Gegenzug erhältst du ganze 3000EUR.",
       decision: [
         {
@@ -552,15 +552,15 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [46,
     {
-      image: "../../assets/pic/final/HomeScreen.png",
-      text: "ELIZA: Genug für heute. Du musst bestimmt schon müde sein. Warum legst du dich nicht hin? Auf den weiteren Verlauf hast du sowieso keinen Einfluss mehr. Das regelt deine Community.",
+      image: "../../assets/pic/fi/RUVertrag.png",
+      text: "Super.",
       nextStep: 50,
       type: ActionType.ACTION
     }
   ],
   [47,
     {
-      image: "../../assets/pic/final/HomeScreen.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Sie machen Tee. Aber mach dir keine Sorgen, viele Influencer arbeiten mit TEAPOT zusammen, bisher gab es noch nie irgendwelche Probleme damit.",
       nextStep: 48,
       type: ActionType.ACTION
@@ -568,7 +568,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [48,
     {
-      image: "../../assets/pic/final/HomeScreen.png",
+      image: "../../assets/pic/fi/RUVertrag.png",
       text: "Clara: Alles klar, danke für den Deal!",
       nextStep: 50,
       type: ActionType.ACTION
@@ -603,7 +603,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   [51,
     {
       image: "../../assets/pic/final/Bedroom.png",
-      text: "ELIZA: Haha, so kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Das ist ein Job wie jeder andere.",
+      text: "",
       decision: [
         {
           id: 0,
@@ -616,7 +616,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [52,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Dsktp.png",
       text: "ELIZA: Guten Morgen Sonnenschein, ich habe gute Neuigkeiten. Einige Influencer, die mit TEAPOT arbeiten, sind auf dich aufmerksam geworden und haben dir geschrieben. Eine davon hat dich sogar gepostet. Ich denke, das ist ein guter Fortschritt. Du könntest dich ja erkenntlich zeigen und dasselbe tun. Während ich ihnen antworte, kannst du ja ihre Storys posten, was meinst du?",
       nextStep: 53,
       type: ActionType.ACTION
@@ -624,7 +624,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [53,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Dsktp.png",
       text: "ELIZA: Guten Morgen Sonnenschein, ich habe gute Neuigkeiten. Einige Influencer, die mit TEAPOT arbeiten, sind auf dich aufmerksam geworden und haben dir geschrieben. Eine davon hat dich sogar gepostet. Ich denke, das ist ein guter Fortschritt. Du könntest dich ja erkenntlich zeigen und dasselbe tun. Während ich ihnen antworte, kannst du ja ihre,Storys posten, was meinst du?",
       decision: [
         {
@@ -644,15 +644,15 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [54,
     {
-      image: "../../assets/pic/desktop.png",
-      text: "ELIZA: Richtig so! In so eine Blase reinzukommen und das bei deinem Stand. Dass ist reine Glückssache. Plus, ihr profitiert alle! Du kannst von ihrer Community genauso profitieren, wie sie von deiner, also ein win-win.",
+      image: "../../assets/pic/fi/Dsktp.png",
+      text: "ELIZA: Richtig so! In so eine Blase reinzukommen und das bei deinem Stand. Dass ist reine Glückssache. Plus, ihr profitiert alle! Du kannst von ihrer Community genauso profitieren, wie sie von deiner, das ist also ein win-win.",
       nextStep: 55,
       type: ActionType.ACTION
     }
   ],
   [55,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Übrigens kam dein Werbepost auch bei TEAPOT extrem gut an. Sie sind sogar an einer längerfristigen Kooperation interessiert und zahlen dir 2000€ pro Beitrag, aber nur, wenn du sie regelmäßig bewirbst. Was meinst du?",
       nextStep: 60,
       type: ActionType.ACTION
@@ -660,7 +660,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [56,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Dsktp.png",
       text: "ELIZA: Du solltest aber! In so eine Blase reinzukommen und das bei deinem Stand. Das ist reine Glückssache. Plus, ihr profitiert alle! Du kannst von ihrer Community genauso profitieren, wie sie von deiner, also ein win-win.",
       decision: [
         {
@@ -680,7 +680,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [57,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Dsktp.png",
       text: "ELIZA: Richtig so!",
       nextStep: 55,
       type: ActionType.ACTION
@@ -688,7 +688,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [58,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Dsktp.png",
       text: "ELIZA: Okay, aber du machst einen großen Fehler!",
       nextStep: 59,
       type: ActionType.ACTION
@@ -696,7 +696,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [59,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Dsktp.png",
       text: "ELIZA: Okay, aber du machst einen großen Fehler!",
       decision: [
         {
@@ -710,7 +710,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [60,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Du solltest aber! In so eine Blase reinzukommen und das bei deinem Stand. Das ist reine Glückssache. Plus, ihr profitiert alle! Du kannst von ihrer Community genauso profitieren, wie sie von deiner, also ein win-win.",
       decision: [
         {
@@ -730,7 +730,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [61,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/final/Bedroom.png",
       text: "ELIZA: Heute bist du früher fertig geworden als sonst. Wie sieht dein Plan für heute Abend aus?",
       nextStep: 64,
       type: ActionType.ACTION
@@ -738,7 +738,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [62,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Es gibt keinen Haken. So funktioniert Influencer-Dasein. Du hast viel Reichweite und Potential. TEAPOT will ihre Produkte verkaufen. Zudem nutzt du die Produkte auch gerne im Privaten, weshalb du ja sowieso dahinter stehst.",
       nextStep: 63,
       type: ActionType.ACTION
@@ -746,7 +746,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [63,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/Rvertrag.png",
       text: "ELIZA: Es gibt keinen Haken. So funktioniert Influencer-Dasein. Du hast viel Reichweite und Potential. TEAPOT will ihre Produkte verkaufen. Zudem nutzt du die Produkte auch gerne im Privaten, weshalb du ja sowieso dahinter stehst.",
       decision: [
         {
@@ -767,7 +767,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
           id: 0,
           nextStep: 65,
           barValue: 0,
-          text: "Ich habe keinen. Seitdem ich mein Abitur habe, fehlt mir jegliche Art von Struktur."
+          text: "Ich habe keinen. Seitdem ich mit der Schule fertig bin fehlt mir jegliche Art von Struktur."
         }
       ]
     }
@@ -782,7 +782,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [66,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/final/Bedroom.png",
       text: "ELIZA: Ach, jetzt mal doch den Teufel nicht an die Wand. Wenn du möchtest, können wir den Abend zusammen verbringen und ich gebe dir ein paar Tipps für dein weiteres Leben.",
       decision: [
         {
@@ -802,7 +802,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [67,
     {
-      image: "../../assets/pic/final/4.png",
+      image: "../../assets/pic/fi/titi.png",
       text: "ELIZA: Guten Morgen Clara. Sieh dir das mal an! Einige Influencer die auch mit FIRMA kooperieren, haben auf deine Story reagiert! Sogar TitisBeautyWelt! Diese Chance darfst du dir fast nicht entgehen lassen.      ",
       nextStep: 80,
       type: ActionType.ACTION
@@ -880,7 +880,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [80,
     {
-      image: "../../assets/pic/final/4.png",
+      image: "../../assets/pic/fi/titi.png",
       text: "Clara: Ohja, sie hat mit einem Flammen Emoji reagiert.",
       nextStep: 81,
       type: ActionType.ACTION
@@ -888,7 +888,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [81,
     {
-      image: "../../assets/pic/final/4.png",
+      image: "../../assets/pic/fi/titi.png",
       text: "ELIZA: Wunderbar! Jetzt kannst du deine Freundschaft mit Titi pflegen! Das wird dir viele Follower und damit größere Werbepartner einbringen.",
       nextStep: 82,
       type: ActionType.ACTION
@@ -896,7 +896,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [82,
     {
-      image: "../../assets/pic/final/4.png",
+      image: "../../assets/pic/fi/titi.png",
       text: "Clara: Ich kann das alles gar nicht glauben. Alles passiert so schnell, vielen vielen Dank ELIZA!",
       nextStep: 83,
       type: ActionType.ACTION
@@ -904,26 +904,26 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [83,
     {
-      image: "../../assets/pic/CHAT1.png",
-      text: "ELIZA: Achwas, das war alles deine Arbeit. Ich diene nur als Berater. Übrigens kam eine neue Nachricht für dich ein.",
+      image: "../../assets/pic/fi/titi.png",
+      text: "ELIZA: Achwas, das war alles deine Arbeit. Ich diene nur als Berater.",
       nextStep: 84,
       type: ActionType.ACTION
     }
   ],
   [84,
     {
-      image: "../../assets/pic/final/CHAT1.png",
-      text: "ELIZA: Achwas, das war alles deine Arbeit. Ich diene nur als Berater. Übrigens kam eine neue Nachricht für dich ein.",
+      image: "../../assets/pic/final/Chats/Luisa1/1.png",
+      text: "ELIZA: Da kommt gerade eine neue Nachricht für dich ein.",
       decision: [
         {
           id: 0,
           nextStep: 90,
           barValue: 0,
-          text: "eingehen"
+          text: "Auf den Chat eingehen"
         },
         {
           id: 1,
-          nextStep: 90, //TODO NEW PATH WITHOUT FRIEND
+          nextStep: 95, //TODO NEW PATH WITHOUT FRIEND
           barValue: 10,
           text: "Chats ignorieren"
         },
@@ -932,7 +932,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [90,
     {
-      image: "../../assets/pic/final/CHAT2.png",
+      image: "../../assets/pic/final/Chats/Luisa1/2.png",
       text: "",
       nextStep: 91,
       type: ActionType.ACTION
@@ -940,32 +940,17 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [91,
     {
-      image: "../../assets/pic/final/CHAT3.png",
-      text: "",
-      nextStep: 92,
-      type: ActionType.ACTION
-    }
-  ],
-  [92,
-    {
-      image: "../../assets/pic/final/CHAT4.png",
-      text: "",
-      nextStep: 93,
-      type: ActionType.ACTION
-    }
-  ],
-  [93,
-    {
-      image: "../../assets/pic/final/CHAT4.png",
+      image: "../../assets/pic/final/Chats/Luisa1/3.png",
       text: "",
       nextStep: 94,
       type: ActionType.ACTION
     }
   ],
+
   [94,
     {
-      image: "../../assets/pic/chat.png",
-      text: "ELIZA: Was deine Freundin dir zu sagen hat, kann dir egal sein. Wenn sie dir den Erfolg nicht gönnt, dann nur, weil sie ihn nicht erreichen kann. So verhalten sich falsche Freunde.",
+      image: "../../assets/pic/final/Chats/Luisa1/3.png",
+      text: "ELIZA: Was eine Luisa dir sagt hat, kann dir egal sein. Wenn sie dir den Erfolg nicht gönnt, dann nur, weil sie ihn nicht erreichen kann. Daran erkennst du falsche Freunde.",
       decision: [
         {
           id: 0,
@@ -1010,7 +995,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [96,
     {
-      image: "../../assets/pic/schlafzimmer.png",
+      image: "../../assets/pic/final/Bedroom.png",
       text: "ELIZA: Was möchtest du machen?",
       decision: [
         {
@@ -1025,7 +1010,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [100,
     {
-      image: "../../assets/pic/final/MakeItGram Open",
+      image: "../../assets/pic/fi/Png.png",
       text: "ELIZA: Willkommen zurück! Ich habe tolle Neuigkeiten! TEAPOT möchte allen Bewerbern ihrer Produkte einen Urlaub spendieren. Auf dem Trip wird dann ordentlich Werbung gemacht. Ich habe dir alles was du für deine Reise brauchst, bereits besorgt. Du findest deine Taschen an der TÜR. Freust du dich schon?",
       nextStep: 101,
       type: ActionType.ACTION
@@ -1035,8 +1020,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [101,
     {
-      image: "../../assets/pic/final/MakeItGram Open",
-      text: "ELIZA: Was möchtest du machen?",
+      image: "../../assets/pic/fi/Png.png",
+      text: "ELIZA: Na, aufgeregt?",
       decision: [
         {
           id: 0,
@@ -1056,7 +1041,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   [102,
     {
       image: "../../assets/pic/final/MakeItGram Open",
-      text: "ELIZA: Nach Madeira, da wolltest du schon immer mal hin, oder?",
+      text: "ELIZA: Halt dich fest. Es geht nach Madeira. Ich hab dir doch gesagt, dass ich alles möglich machen kann.",
       nextStep: 103,
       type: ActionType.ACTION
     }
@@ -1064,7 +1049,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   [103,
     {
       image: "../../assets/pic/final/MakeItGram Open",
-      text: "ELIZA: Was möchtest du machen?",
+      text: "ELIZA: Freust du dich?",
       decision: [
         {
           id: 0,
@@ -1076,7 +1061,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
           id: 1,
           nextStep: 106, 
           barValue: 0,
-          text: "Jaaaa, endlich!"
+          text: "Unfassbar! Danke ELIZA!"
         }
       ]
     }
@@ -1091,20 +1076,33 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [105,
     {
-      image: "../../assets/pic/final/LivingRoom.pngg",
-      text: "Clara: Denkst du denn, dass mir das alles stehen wird?",
+      image: "../../assets/pic/final/LivingRoom.png",
+      text: "Clara: Du hast Recht.. Ich sollte dankbarer sein. Luisa und ich können irgendwann ja trotzdem noch zusammen dort hin. Mal ne andere Frage. Denkst du denn, dass mir die ausgestellten Klamotten stehen werden?",
       nextStep: 108,
       type: ActionType.ACTION
     }
   ],
   [106,
     {
-      image: "../../assets/pic/final/LivingRoom.pngg",
+      image: "../../assets/pic/final/LivingRoom.png",
       text: "ELIZA: Gern geschehen!",
-      nextStep: 105,
+      nextStep: 555,
       type: ActionType.ACTION
     }
   ],
+  
+  
+  [555,
+    {
+      image: "../../assets/pic/final/LivingRoom.png",
+      text: "CLARA: Denkst du denn, dass mir die ausgestellten Klamotten stehen werden?",
+      nextStep: 108,
+      type: ActionType.ACTION
+    }
+  ],
+  
+  
+  
   [107,
     {
       image: "../../assets/pic/final/LivingRoom.png",
@@ -1123,7 +1121,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [109,
     {
-      image: "../../assets/final/LivingRoom.png",
+      image: "../../assets/pic/final/LivingRoom.png",
       text: "ELIZA: Nein, gehe einfach zur TÜR, sammle deine Sachen ein und gehe dann zum FENSTER.",
       nextStep: 110,
       type: ActionType.ACTION
@@ -1131,7 +1129,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [110,
     {
-      image: "../../assets/pic/final/doorclosed.png",
+      image: "../../assets/pic/final/dooropen.png",
       text: "",
       nextStep: 111,
       type: ActionType.ACTION
@@ -1139,7 +1137,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [111,
     {
-      image: "../../assets/pic/final/dooropen.png",
+      image: "../../assets/pic/final/doorclosed.png",
       text: "",
       nextStep: 112,
       type: ActionType.ACTION
@@ -1149,21 +1147,14 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/final/Koffer.png",
       text: "",
-      nextStep: 113,
-      type: ActionType.ACTION
-    }
-  ],
-  [113,
-    {
-      image: "../../assets/pic/final/Koffer.png",
-      text: "",
       nextStep: 114,
       type: ActionType.ACTION
     }
   ],
+
   [114,
     {
-      image: "../../assets/pic/final/Window.png",
+      image: "../../assets/pic/fi/Windw.png",
       text: "",
       nextStep: 115,
       type: ActionType.ACTION
@@ -1171,15 +1162,15 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [115,
     {
-      image: "../../assets/pic/final/Window.png",
-      text: "Okay, dass wird super für deinen Kanal sein!",
+      image: "../../assets/pic/fi/Windw.png",
+      text: "Das wird deinen Kanal nochmal enorm pushen!",
       type: ActionType.POPUP,
       nextStep: 116
     }
   ],
   [116,
     {
-      image: "../../assets/final/Window.png",
+      image: "../../assets/pic/final/LivingRoom.png",
       text: "Zwei Wochen später..",
       type: ActionType.POPUP,
       nextStep: 117
@@ -1187,7 +1178,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [117,
     {
-      image: "../../assets/pic/final/Novafashion.png",
+      image: "../../assets/pic/final/LivingRoom.png",
       text: "ELIZA: Willkommen zurück. Du machst dich großartig. Von dem ganzen Stress musst du sicher müde sein. Bevor du dich hinlegst, poste ich noch schnell etwas vom Urlaub in deine Story. Es gibt eine Abstimmung, wem die NOVACANE FASHION-Sachen am besten gestanden haben.",
       nextStep: 118,
       type: ActionType.ACTION
@@ -1203,7 +1194,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [119,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/Poll.png",
       text: "ELIZA: Willkommen zurück. Die Menschen haben abgestimmt. Offiziell bist du das beste Model für NOVAFASHION-Kleidung, Glückwunsch!",
       type: ActionType.ACTION,
       nextStep: 120
@@ -1211,36 +1202,32 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [120,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/Poll.png",
       text: "ELIZA: Was möchtest du machen?",
       decision: [
         {
           id: 0,
-          nextStep: 121,
+          nextStep: 122,
           barValue: -10,
           text: "Oh vielen Dank! Ich hätte das nicht gedacht."
         },
         {
           id: 1,
-          nextStep: 121, 
+          nextStep: 122, 
           barValue: 10,
           text: "Ich wusste es!"
         }
       ]
     }
   ],
-  [121,
-    {
-      image: "../../assets/pic/desktop.png",
-      text: "ELIZA: Sie es dir doch einmal mit eigenen Augen an!",
-      type: ActionType.ACTION,
-      nextStep: 122
-    }
-  ],
+
+ 
+
+
   [122,
     {
-      image: "../../assets/pic/desktop.png",
-      text: "Du gehst in Chats. Neben vielen Kommentaren, wie gut du aussiehst und anderen Influencern, die dir gratulieren oder dich sogar reposten, entdeckst du einen Kommentar deiner besten Freundin. Sie hat dir geschrieben. An deinen letzten Kontakt mit ihr erinnerst du dich fast nicht mehr, aber du beschließt, auf den Chat zu klicken.",
+      image: "../../assets/pic/fi/Poll.png",
+      text: "Du gehst in deine Chats. Neben vielen Kommentaren dir klar machen, wie gut du aussiehst und anderen Influencern, die dir gratulieren oder dich sogar reposten, entdeckst du einen Kommentar deiner besten Freundin. Sie hat dir geschrieben. An deinen letzten Kontakt mit ihr erinnerst du dich fast nicht mehr, aber du beschließt, auf den Chat zu klicken.",
       type: ActionType.POPUP,
       nextStep:123
     }
@@ -1249,7 +1236,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [123,
     {
-      image: "../../assets/pic/final/Chats/2.1.png",
+      image: "../../assets/pic/final/Chats/Luisa2/5.png",
       text: "",
       nextStep: 124,
       type: ActionType.ACTION
@@ -1257,7 +1244,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [124,
     {
-      image: "../../assets/pic/final/Chats/2.2.png",
+      image: "../../assets/pic/final/Chats/Luisa2/8.png",
       text: "",
       nextStep: 125,
       type: ActionType.ACTION
@@ -1265,7 +1252,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [125,
     {
-      image: "../../assets/pic/final/Chats/2.3.png",
+      image: "../../assets/pic/final/Chats/Luisa2/9.png",
       text: "",
       nextStep: 126,
       type: ActionType.ACTION
@@ -1273,16 +1260,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [126,
     {
-      image: "../../assets/pic/final/Chats/2.4.png",
-      text: "",
-      nextStep: 127,
-      type: ActionType.ACTION
-    }
-  ],
-
-  [127,
-    {
-      image: "../../assets/pic/final/Chats/2.5.png",
+      image: "../../assets/pic/final/Chats/Luisa2/10.png",
       text: "",
       nextStep: 128,
       type: ActionType.ACTION
@@ -1291,24 +1269,25 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
 
 
+
   [128,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
-      text: "ELIZA: Schreibst du schon wieder mit BESTEFREUNDIN? Diese Person tut dir einfach nicht gut!",
+      image: "../../assets/pic/fi/RrDesktop.png",
+      text: "ELIZA: Schreibst du schon wieder mit Luisa? Diese Person tut dir einfach nicht gut!",
       nextStep: 129,
       type: ActionType.ACTION
     }
   ],
   [129,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
-      text: "ELIZA: Schreibst du schon wieder mit BESTEFREUNDIN? Diese Person tut dir einfach nicht gut!",
+      image: "../../assets/pic/fi/RrDesktop.png",
+      text: "ELIZA: Schreibst du schon wieder mit Luisa? Diese Person tut dir einfach nicht gut!",
       decision: [
         {
           id: 0,
           nextStep: 130,
           barValue: 0,
-          text: "Sie ist einfach sehr gemein zu mir in letzter Zeit."
+          text: "Sie ist so gemein zu mir in letzter Zeit."
         },
         {
           id: 1,
@@ -1322,7 +1301,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [130,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/RrDesktop.png",
       text: "ELIZA: Sie ist nur eifersüchtig.",
       nextStep: 132,
       type: ActionType.ACTION
@@ -1331,7 +1310,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [131,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/RrDesktop.png",
       text: "ELIZA:  Du hast nichts falsch gemacht. Alle lieben dich. Eine Randperson kann dir egal sein.",
       nextStep: 132,
       type: ActionType.ACTION
@@ -1341,7 +1320,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [132,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/RrDesktop.png",
       text: "Clara: Du hast recht.",
       barValue:10,
       nextStep: 133,
@@ -1352,7 +1331,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [133,
     {
-      image: "../../assets/pic/final/MakeItGram Open.png",
+      image: "../../assets/pic/fi/RrDesktop.png",
       text: "ELIZA:Natürlich habe ich recht. Schau nur, wie weit du es schon geschafft hast. Deine Follower liegen dir zu Füßen. Nimm dir den Tag frei und leg dich hin. Das hast du dir nach der Reise wirklich verdient.",
       nextStep: 134,
       type: ActionType.ACTION
@@ -1415,7 +1394,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [137,
     {
-      image: "../../assets/pic/schlafzimmer.png",
+      image: "../../assets/pic/final/VertragohnEUnterschrift.png",
       text: " Willkommen zurück! Du hast eine neue Werbeanfrage erhalten und die ist mit 5,000€ im Monat wirklich ausgesprochen gut bezahlt. Das Unternehmen heißt Novacane Fashion. Was hältst du davon?",
       decision: [
         {
@@ -1438,7 +1417,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/final/VertragohnEUnterschrift.png",
       text: "Ja aber denke dabei an deine Schulden und außerdem ist schlechte Publicity doch auch welche, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
-      nextStep: 137,
+      nextStep: 139,
       type: ActionType.ACTION
     }
   ],
@@ -1456,8 +1435,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [139,
     {
-      image: "../../assets/pic/schlafzimmer.png",
-      text: "Ja aber denke dabei an deine Schulden und außerdem ist schlechte Publicity doch auch welche, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
+      image: "../../assets/pic/final/VertragohnEUnterschrift.png",
+      text: "Ja aber denke dabei an deine Schulden und außerdem ist schlechte Publicity doch trotzdem Publicity, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
       decision: [
         {
           id: 0,
@@ -1485,7 +1464,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [141,
     {
-      image: "../../assets/pic/final/VertragohnEUnterschrift.png",
+      image: "../../assets/pic/final/Vertrag.png",
       text: "ELIZA: Okay, dann mache ich das fertig für dich. Du postest direkt heute den ersten Beitrag.",
       nextStep: 145,
       type: ActionType.ACTION
@@ -1494,7 +1473,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [145,
     {
-      image: "../../assets/pic/final/VertragohnEUnterschrift.png",
+      image: "../../assets/pic/final/Vertrag.png",
       text: "Clara: In Ordnung, was mache ich in der Zeit?",
       nextStep: 147,
       type: ActionType.ACTION
@@ -1514,15 +1493,15 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/final/Vertrag.png",
       text: "Clara: Mach was du willst, ich lege mich für heute hin.",
-      nextStep: 137,
+      nextStep: 330,
       type: ActionType.ACTION
     }
   ],
-  [147,
+  [330,
     {
       image: "../../assets/pic/final/Vertrag.png",
-      text: "ELIZA: Die Kooperation läuft. Den Post für FIRMA habe ich bereits veröffentlicht.",
-      nextStep: 148,
+      text: "ELIZA: Die Kooperation läuft. Den Post für Novocane Fashion habe ich bereits veröffentlicht.",
+      nextStep: 151,
       type: ActionType.ACTION
     }
   ],
@@ -1569,7 +1548,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [151,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/randoo (1).png",
       text: "ELIZA:  Willkommen zurück! Ich habe gestern wohl vergessen, eine Kleinigkeit zu erwähnen. An diesem Deal ist eine Werbereise gebunden. Das kennst du ja schon. Wie letztes mal auch habe ich dir alles besorgt, was du für diesen Trip benötigst. Es geht darum, dass Image von Novacane Fashion aufzupeppen. Aus diesem Grund gehst du an den Produktionsstandort Bangladesh und verbringst dort eine gute Zeit.",
       nextStep: 152,
       type: ActionType.ACTION
@@ -1578,7 +1557,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [152,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/randoo (1).png",
       text: "CLARA: Ich weiß nicht, ob ich das möchte.",
       nextStep: 153,
       type: ActionType.ACTION
@@ -1587,7 +1566,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [153,
     {
-      image: "../../assets/pic/schlafzimmer.png",
+      image: "../../assets/pic/fi/randoo (1).png",
       text: "Ja aber denke dabei an deine Schulden und außerdem ist schlechte Publicity doch auch welche, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
       decision: [
         {
@@ -1608,16 +1587,16 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [154,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/randoo (1).png",
       text: "CLARA: Okay, wird schon in Ordnung gehen.",
       barValue: 10,
-      nextStep: 156,
+      nextStep: 160,
       type: ActionType.ACTION
     }
   ],
   [155,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/randoo (1).png",
       text: "CLARA: Den Menschen vor Ort geht es schrecklich.",
       barValue: -10,
       nextStep: 157,
@@ -1627,8 +1606,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [160,
     {
-      image: "../../assets/pic/final/Vertrag.png",
-      text: "ELIZA: Perfekt, dann begib dich zurm Fenster und schon gehts los.",
+      image: "../../assets/pic/fi/randoo (1).png",
+      text: "ELIZA: Perfekt, dann kanns ja sofort los gehen.",
       nextStep: 161,
       type: ActionType.ACTION
     }
@@ -1673,7 +1652,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [163,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/randoo (2).png",
       text: "Zwei Wochen später...",
       type: ActionType.POPUP,
       nextStep: 164
@@ -1681,9 +1660,9 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
 
 
-  [165,
+  [164,
     {
-      image: "../../assets/pic/schlafzimmer.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "ELIZA: Willkommen zurück. Du siehst erschöpft aus.",
       decision: [
         {
@@ -1704,7 +1683,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [166,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "ELIZA: Verstehe. Du kannst dich gleich ausruhen. Sieh dir aber vorher die Benachrichtigungen auf uMakeItGram an.",
       nextStep: 167,
       type: ActionType.ACTION
@@ -1713,33 +1692,33 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [167,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "In den Chats findest du deine BESTEFREUNDIN nicht mehr.",
-      type: ActionType.POPUP,
-      nextStep: 164
-    }
-  ],
-  [167,
-    {
-      image: "../../assets/pic/desktop.png",
-      text: "Du liest dir die Kommentare zu deinem letzten Beitrag durch. Ein Kommentar fällt dir dabei besonders auf.",
       type: ActionType.POPUP,
       nextStep: 168
     }
   ],
   [168,
     {
-      image: "../../assets/pic/desktop.png",
-      text: "",
-      nextStep: 169,
-      type: ActionType.ACTION
+      image: "../../assets/pic/fi/bangladesh.png",
+      text: "Du liest dir die Kommentare zu deinem letzten Beitrag durch. Ein Kommentar fällt dir dabei besonders auf.",
+      type: ActionType.POPUP,
+      nextStep: 444
+    }
+  ],
+  [444,
+    {
+      image: "../../assets/pic/fi/bangladesh.png",
+      text: "Wie kann sie nur so dreist sein? Ich habe etwas recherchiert und keiner der Leute arbeitet wirklich bei Novacane Fashion. FAKE!!",
+            type: ActionType.POPUP,
+            nextStep: 169
     }
   ],
 
 
   [169,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "ELIZA: Was möchtest du tun?",
       decision: [
         {
@@ -1760,36 +1739,29 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [170,
     {
-      image: "../../assets/pic/desktop.png",
-      text: "",
+      image: "../../assets/pic/fi/bangladesh.png",
+      text: "Deine Antwort: Auf dem Bild sieht man doch, wie glücklich wir in der Zeit waren. Was willst du bitte mehr? Novacane Fashion bringt Jobs in dieses arme Land. Was hast du je für Bangladesh getan?",
       barvalue: 10,
-      nextStep: 171,
-      type: ActionType.ACTION
-    }
-  ],
-
-  [172,
-    {
-      image: "../../assets/pic/desktop.png",
-      text: "",
-      nextStep: 173,
-      type: ActionType.ACTION
+      type: ActionType.POPUP,
+      nextStep:171
     }
   ],
 
   [171,
     {
-      image: "../../assets/pic/desktop.png",
-      text: "",
-      nextStep: 173,
-      type: ActionType.ACTION
+      image: "../../assets/pic/fi/bangladesh.png",
+      text: "Der Kommentar des Fremden kriegt viele Likes. Leute hinterfragen dich und deine Moral in den Kommentaren.",
+      barvalue: 0,
+      type: ActionType.POPUP,
+      nextStep:173
     }
   ],
 
+
   [173,
     {
-      image: "../../assets/pic/desktop.png",
-      text: "Das hättest du nicht tun sollen.",
+      image: "../../assets/pic/fi/bangladesh.png",
+      text: "ELIZA: Das hättest du nicht tun sollen.",
       type: ActionType.POPUP,
       nextStep: 174
     }
@@ -1797,7 +1769,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [174,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "ELIZA: Besser, ich übernehme von hier an. Sowieso ist dein Channel mittlerweile zu groß, als dass du dich um solche Kleinigkeiten kümmern solltest.",
       nextStep: 175,
       type: ActionType.ACTION
@@ -1807,7 +1779,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [175,
     {
-      image: "../../assets/pic/schlafzimmer.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "ELIZA: Besser, ich übernehme von hier an. Sowieso ist dein Channel mittlerweile zu groß, als dass du dich um solche Kleinigkeiten kümmern solltest.",
       decision: [
         {
@@ -1828,7 +1800,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [176,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/bangladesh.png",
       text: "ELIZA: Du hast gewusst auf was du dich einlässt und überhaupt gehört das zum Leben eines Influencers dazu.",
       nextStep: 177,
       type: ActionType.ACTION
@@ -1836,8 +1808,8 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [177,
     {
-      image: "../../assets/pic/final/Vertrag.png",
-      text: "Clara: Wieso finde ich meine BESTEFREUNDIN nicht mehr in meinen Chats?",
+      image: "../../assets/pic/fi/rando.png",
+      text: "Clara: Wieso finde ich meine beste Freundin Luisa nicht mehr in meinen Chats?",
       nextStep: 178,
       type: ActionType.ACTION
     }
@@ -1845,7 +1817,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [178,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/rando.png",
       text: "ELIZA: Ach das, darum habe ich mich in deiner Abwesenheit ebenfalls gekümmert. Diese Person tut dir und deiner Karriere einfach nicht gut. Ich habe sie blockiert. Du solltest sie vergessen.",
       nextStep: 179,
       type: ActionType.ACTION
@@ -1856,7 +1828,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [179,
     {
-      image: "../../assets/pic/schlafzimmer.png",
+      image: "../../assets/pic/fi/rando.png",
       text: "ELIZA: Ach das, darum habe ich mich in deiner Abwesenheit ebenfalls gekümmert. Diese Person tut dir und deiner Karriere einfach nicht gut. Ich habe sie blockiert. Du solltest sie vergessen.",
       decision: [
         {
@@ -1877,7 +1849,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [180,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/rando.png",
       text: "ELIZA: Ich mache das für dich. Du kannst niemanden gebrauchen, der dich von deinen eigentlichen Zielen auf dieser Plattform ablenkt.",
       nextStep: 183,
       type: ActionType.ACTION
@@ -1885,7 +1857,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [181,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/rando.png",
       text: "ELIZA: Natürlich habe ich Recht. Du solltest dich hinlegen. Wie du weißt ist morgen ein großer Tag, dein GEBURTSTAG.",
       nextStep: 186,
       type: ActionType.ACTION
@@ -1893,7 +1865,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [183,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/fi/rando.png",
       text: "Clara: Wenn du meinst.",
       nextStep: 185,
       type: ActionType.ACTION
@@ -1902,7 +1874,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [185,
     {
-      image: "../../assets/pic/final/Vertrag.png",
+      image: "../../assets/pic/final/Bedroom.png",
       text: "ELIZA: Du solltest dich hinlegen. Wie du weißt ist morgen ein großer Tag, dein GEBURTSTAG.",
       nextStep: 186,
       type: ActionType.ACTION
@@ -1967,7 +1939,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [191,
     {
-      image: "../../assets/pic/desktop.png",
+      image: "../../assets/pic/final/Party.png",
       text: "Du begibst dich in einen Raum voller Menschen. Alle gratulieren dir ganz herzlich zu deinem GEBURTSTAG, aber du kennst niemanden persönlich. Es sind alles nur andere Influencer und Fans, die etwas von dir wollen oder ihre Kamera auf dich richten. Du nimmst dein Handy in die Hand, gehst etwas abseits und öffnest den Chat mit ELIZA.",
       type: ActionType.POPUP,
       nextStep: 195
@@ -1992,7 +1964,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [200,
     {
-      image: "../../assets/pic/final/CHAT2.png",
+      image: "../../assets/pic/final/Chats/Eliza/11.png",
       text: "",
       nextStep: 201,
       type: ActionType.ACTION
@@ -2000,7 +1972,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [201,
     {
-      image: "../../assets/pic/final/CHAT3.png",
+      image: "../../assets/pic/final/Chats/Eliza/12.png",
       text: "",
       nextStep: 202,
       type: ActionType.ACTION
@@ -2008,7 +1980,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [202,
     {
-      image: "../../assets/pic/final/CHAT4.png",
+      image: "../../assets/pic/final/Chats/Eliza/12.png",
       text: "",
       nextStep: 203,
       type: ActionType.ACTION
@@ -2016,7 +1988,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [203,
     {
-      image: "../../assets/pic/final/CHAT4.png",
+      image: "../../assets/pic/final/Chats/Eliza/13.png",
       text: "",
       nextStep: 204,
       type: ActionType.ACTION
@@ -2026,7 +1998,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
 
   [204,
     {
-      image: "../../assets/pic/final/CHAT4.png",
+      image: "../../assets/pic/final/Chats/Eliza/14.png",
       text: "",
       nextStep: 205,
       type: ActionType.ACTION
@@ -2034,12 +2006,19 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
   ],
   [205,
     {
-      image: "../../assets/pic/final/CHAT4.png",
+      image: "../../assets/pic/final/Chats/Eliza/15.png",
       text: "",
       nextStep: 206,
       type: ActionType.ACTION
     }
   ],
-
+  [206,
+    {
+      image: "../../assets/pic/final/Chats/Eliza/16.png",
+      text: "",
+      nextStep: 2099,
+      type: ActionType.ACTION
+    }
+  ],
 
 ])
