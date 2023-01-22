@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActionTypes, isActionDecision, isActionPopup, isActionText, lifeMaxBarValue, lifeStartValue, path_fashion, textSpeed } from '../model/text';
+import { Component, OnInit } from '@angular/core';
+import { ActionTypes, badEndingValue, debugModus, ending_src, isActionDecision, isActionPopup, isActionText, lifeMaxBarValue, lifeStartValue, path_fashion, textSpeed } from '../model/text';
 
 @Component({
   selector: 'app-text-view',
@@ -15,8 +15,13 @@ export class TextViewComponent implements OnInit {
   barValue: number = lifeStartValue;
   maxBarValue: number = lifeMaxBarValue;
   showPopup: boolean = false;
+  showEnding: boolean = false;
+  endingPic: string = "";
+  textDebugModus = debugModus;
+  currentEndingImgSrc = "";
+
   barStyle = {
-    width: this.maxBarValue/this.barValue + '%'
+    width: (this.maxBarValue/100)*this.barValue + '%'
   }
 
   
@@ -36,7 +41,7 @@ export class TextViewComponent implements OnInit {
   decide(id: number) {
     if(isActionDecision(this.currentAction!)) {
       this.barValue += this.currentAction.decision[id].barValue;
-      this.barStyle.width = this.maxBarValue/this.barValue + '%';
+      this.barStyle.width = (this.maxBarValue/100)*this.barValue + '%';
       this.nextAction(this.currentAction!.decision[id].nextStep)
 
     }
@@ -44,13 +49,24 @@ export class TextViewComponent implements OnInit {
 
   nextAction(id: number) {
     this.currentStep = id;
-    this.currentAction = path_fashion.get(id);
 
-    if(isActionText(this.currentAction!)) {
-      this.textStep = 0;
-    }
-    else if(isActionPopup(this.currentAction!)) {
-      this.showPopup = true;
+    if(this.currentStep === 1000) {
+      this.showEnding = true;
+      if(this.barValue >= badEndingValue)
+        this.endingPic = ending_src[1];
+      else 
+        this.endingPic = ending_src[0];
+    } else if(this.currentStep === 1001) {
+      this.endingPic = ending_src[2];
+    } else {
+      this.currentAction = path_fashion.get(id);
+
+      if(isActionText(this.currentAction!)) {
+        this.textStep = 0;
+      }
+      else if(isActionPopup(this.currentAction!)) {
+        this.showPopup = true;
+      }
     }
   }
 

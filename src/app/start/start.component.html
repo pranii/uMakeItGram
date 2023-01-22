@@ -1,4 +1,4 @@
-<div *ngIf="!showButton" id="start-text" (click)="showButton=true">
+<div *ngIf="!showButton" id="start-text" (click)="forwardToPath()">
   {{showText}}
 </div>
 <div *ngIf="showButton" id="start-button" (click)="forwardToPath()">

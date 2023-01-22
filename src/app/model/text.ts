@@ -32,10 +32,11 @@ type Decision = {
   text: string;
 }
 
-export const lifeStartValue = 20;
-export const lifeMaxBarValue = 200;
+export const lifeStartValue = 60;
+export const lifeMaxBarValue = 100;
 export const textSpeed = 10;
-
+export const debugModus = false;
+export const badEndingValue = 50;
 
 export function isActionText(action: ActionTypes): action is ActionText {
   return (action as ActionText).nextStep !== undefined && (action as ActionText).type === ActionType.ACTION;
@@ -46,6 +47,13 @@ export function isActionDecision(action: ActionTypes): action is ActionDecision 
 export function isActionPopup(action: ActionTypes): action is ActionPopUp {
   return (action as ActionPopUp).type !== undefined && (action as ActionPopUp).type === ActionType.POPUP;
 }
+
+export const ending_src = [
+  "../../assets/pic/final/ending/goodEnding.jpg",
+  "../../assets/pic/final/ending/badEnding.jpg",
+  "../../assets/pic/final/ending/ending.jpg",
+]
+
 
 export const path_fashion: Map<number, ActionTypes> = new Map([
   [0,   
@@ -2016,7 +2024,7 @@ export const path_fashion: Map<number, ActionTypes> = new Map([
     {
       image: "../../assets/pic/final/Chats/Eliza/16.png",
       text: "",
-      nextStep: 2099,
+      nextStep: 1000,
       type: ActionType.ACTION
     }
   ],
