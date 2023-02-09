@@ -12,7 +12,7 @@ import { PathComponent } from './path/path.component';
     AppComponent,
     TextViewComponent,
     StartComponent,
-    PathComponent
+    PathComponent,
   ],
   imports: [
     BrowserModule,

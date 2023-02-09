@@ -1,36 +1,43 @@
 
-<span> {{currentStep}}</span>
-<span> {{$any(currentAction).nextStep}}</span>
-<span *ngFor="let decision of $any(currentAction).decision">{{decision.nextStep}}/</span>
-<div id="content">
-  <div>
-    <div id="image-view" (click)="nextStep()">
-      <img src={{currentAction?.image}}>
-    </div>
-    <div id="decision-wrapper">
-      <div *ngIf="isActionDecision()" id="decision">
-        <span *ngFor="let decision of $any(currentAction).decision; let i = index">
-          <button class="decision-button" (click)="decide(i)">{{decision.text}}</button>
+
+<div *ngIf="!showEnding">
+  <div *ngIf="textDebugModus">
+    <span> {{currentStep}}</span>
+    <span> {{$any(currentAction).nextStep}}</span>
+    <span *ngFor="let decision of $any(currentAction).decision">{{decision.nextStep}}/</span>
+  </div>
+  <div id="content">
+    <div>
+      <div id="image-view" (click)="nextStep()">
+        <img src={{currentAction?.image}}>
+      </div>
+      <div id="decision-wrapper">
+        <div *ngIf="isActionDecision()" id="decision">
+          <span *ngFor="let decision of $any(currentAction).decision; let i = index">
+            <button class="decision-button" (click)="decide(i)">{{decision.text}}</button>
+          </span>
+        </div>
+      </div>
+      <div id="view">
+        <div id="text-box" (click)="nextStep()">
+          <div id="typewriter">
+            {{showText}}
+          </div>
+        </div>
+      </div>
+      <div id="life-bar">
+        <span #life [ngStyle]="barStyle" id="bar">
+          
         </span>
       </div>
     </div>
-    <div id="view">
-      <div id="text-box" (click)="nextStep()">
-        <div id="typewriter">
-          {{showText}}
-        </div>
-      </div>
+    <div *ngIf="showPopup" id="popup-wrapper">
     </div>
-    <div id="life-bar">
-      <span #life [ngStyle]="barStyle" id="bar">
-        
-      </span>
+    <div *ngIf="showPopup" id="popup" (click)="showPopup=false">
+      {{currentAction!.text}}
     </div>
   </div>
-  <div *ngIf="showPopup" id="popup-wrapper">
-  </div>
-  <div *ngIf="showPopup" id="popup" (click)="showPopup=false">
-    {{currentAction!.text}}
-  </div>
-  
+</div>
+<div *ngIf="showEnding" style="background-color: black; height: 100%; display: flex; justify-content: center; align-items: center;" (click)="nextAction(1001)">
+  <img style="height: 90%" src={{endingPic}}>
 </div>

@@ -18,7 +18,7 @@ export class PathComponent implements OnInit {
   source;
 
   barStyle = {
-    width: this.maxBarValue/this.barValue + '%'
+    width: (this.maxBarValue/100)*this.barValue + '%'
   }
 
   constructor(private router: Router) {
