@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "umakeitgram": {
+    "uMakeItGram": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "umakeitgram:build:production"
+              "browserTarget": "uMakeItGram:build:production"
             },
             "development": {
-              "browserTarget": "umakeitgram:build:development"
+              "browserTarget": "uMakeItGram:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "umakeitgram:build"
+            "browserTarget": "uMakeItGram:build"
           }
         },
         "test": {
@@ -110,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "umakeitgram"
+  "defaultProject": "uMakeItGram"
 }

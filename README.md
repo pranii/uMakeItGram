@@ -1,4 +1,4 @@
-# Umakeitgram
+# uMakeItGram
 
 ## Vorraussetzungen
 
