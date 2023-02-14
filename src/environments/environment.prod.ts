@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  assetUrl: "uMakeItGran/assets/pic" 
 };

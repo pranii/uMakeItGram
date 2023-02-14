@@ -1,0 +1,26 @@
+.logo {
+  height: 15vh;
+}
+
+.button-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+
+  .download-button {
+    width: fit-content;
+    align-self:center;
+    background:transparent;
+    padding:1rem 1rem;
+    margin:0 1rem;
+    transition:all .5s ease;
+    color:#41403E;
+    font-size:2rem;
+    letter-spacing:1px;
+    outline:none;
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border:solid 7px #41403E;
+  }
+}

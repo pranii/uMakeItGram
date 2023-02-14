@@ -10,14 +10,14 @@
     justify-content: flex-start;
     align-items: flex-start;
     font-family: Consolas, monaco, monospace;
-    min-height: 70px;
+    min-height: 60px;
     font-size: 25px;
     color: #41403E;
   }
 }
 
 #image-view {
-  height: 70vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   img {
@@ -68,7 +68,7 @@
 }
 
 #decision-wrapper {
-  height: 80px;
+  height: 70px;
   #decision {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -94,10 +94,4 @@
      } 
     }
   }
-}
-
-
-
-#content {
-  max-height: 100vh;
 }
